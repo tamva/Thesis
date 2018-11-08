@@ -49,10 +49,10 @@ df_prophet.columns = ['ds','y']
 
 m = Prophet()
 m.fit(df_prophet)
-future = m.make_future_dataframe(periods=2,freq='H')
+future = m.make_future_dataframe(periods=300,freq='H')
 forecast = m.predict(future)
-# print(forecast)
-# fig = m.plot(forecast)
-# plt.show(m, forecast)
+
+m.plot(forecast)
+
 plt.show()
 
