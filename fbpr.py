@@ -1,4 +1,3 @@
-#Usefull libraries
 import pandas as pd
 import numpy as np
 import warnings
@@ -55,4 +54,3 @@ forecast = m.predict(future)
 m.plot(forecast)
 
 plt.show()
-
