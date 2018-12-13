@@ -167,23 +167,23 @@ seq = y_batch[batch, :, signal]
 plt.plot(seq)
 plt.show()
 
-# validation_data = (np.expand_dims(x_test_scaled, axis=0),
-#                    np.expand_dims(y_test_scaled, axis=0))
+validation_data = (np.expand_dims(x_test_scaled, axis=0),
+                   np.expand_dims(y_test_scaled, axis=0))
 #
-# #Create the Recurrent Neural Network
-# model = Sequential()
-# model.add(GRU(units=512,
-#               return_sequences=True,
-#               input_shape=(None, num_x_signals,)))
+#Create the Recurrent Neural Network
+model = Sequential()
+model.add(GRU(units=512,
+              return_sequences=True,
+              input_shape=(None, num_x_signals,)))
 #
-# model.add(Dense(num_y_signals, activation='sigmoid'))
+model.add(Dense(num_y_signals, activation='sigmoid'))
 #
-# if False:
-#     # Maybe use lower init-ranges.
-#     init = RandomUniform(minval=-0.05, maxval=0.05)
-#
-#     model.add(Dense(num_y_signals,
-#                     activation='linear',kernel_initializer=init))
+if False:
+    # Maybe use lower init-ranges.
+    init = RandomUniform(minval=-0.05, maxval=0.05)
+
+    model.add(Dense(num_y_signals,
+                    activation='linear',kernel_initializer=init))
 #
 #
 # warmup_steps = 20
